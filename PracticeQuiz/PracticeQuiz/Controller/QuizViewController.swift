@@ -27,12 +27,67 @@ class QuizViewController: UIViewController {
         questionTitle.text = questions.questions[0].questionTitle
     }
     
+    func updateState(button: UIButton) {
+        button.backgroundColor = .gray
+        button.isUserInteractionEnabled = true
+    }
+    
     @IBAction func option1Pressed(_ sender: UIButton) {
         if questions.questions[0].option1Text == questions.questions[0].rightAnswer {
-            questionTitle.text = "YOU ARE RIGHT!"
+            option1.backgroundColor = .green
         }
         else {
-            questionTitle.text = "YOU ARE WRONG!"
+            option1.backgroundColor = .red
         }
+        option1.isUserInteractionEnabled = false
+        option2.isUserInteractionEnabled = false
+        option3.isUserInteractionEnabled = false
+        option4.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func option2Pressed(_ sender: Any) {
+        if questions.questions[0].option2Text == questions.questions[0].rightAnswer {
+            option2.backgroundColor = .green
+        }
+        else {
+            option2.backgroundColor = .red
+        }
+        option1.isUserInteractionEnabled = false
+        option2.isUserInteractionEnabled = false
+        option3.isUserInteractionEnabled = false
+        option4.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func option3Pressed(_ sender: Any) {
+        if questions.questions[0].option3Text == questions.questions[0].rightAnswer {
+            option3.backgroundColor = .green
+        }
+        else {
+            option3.backgroundColor = .red
+        }
+        option1.isUserInteractionEnabled = false
+        option2.isUserInteractionEnabled = false
+        option3.isUserInteractionEnabled = false
+        option4.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func option4Pressed(_ sender: Any) {
+        if questions.questions[0].option4Text == questions.questions[0].rightAnswer {
+            option4.backgroundColor = .green
+        }
+        else {
+            option4.backgroundColor = .red
+        }
+        option1.isUserInteractionEnabled = false
+        option2.isUserInteractionEnabled = false
+        option3.isUserInteractionEnabled = false
+        option4.isUserInteractionEnabled = false
+    }
+    
+    func updateQuestion() {
+        updateState(button: option1)
+        updateState(button: option2)
+        updateState(button: option3)
+        updateState(button: option4)
     }
 }
