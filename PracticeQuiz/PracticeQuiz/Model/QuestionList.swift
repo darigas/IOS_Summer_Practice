@@ -13,7 +13,10 @@ class QuestionList {
     var questions = [Question]()
     
     init() {
-        questions.append(Question(questionTitle: "question one", option1Text: "answer one", option2Text: "answer two", option3Text: "answer three", option4Text: "answer four", rightAnswer: "answer one"))
-        questions.append(Question(questionTitle: "question 1", option1Text: "answer 1", option2Text: "answer 2", option3Text: "answer 3", option4Text: "answer 4", rightAnswer: "answer 1"))
+        questions.append(Question(questionTitle: "Who Played Wonder Woman?", option1Text: "Elena Anaya", option2Text: "Megan Fox", option3Text: "Gal Gadot", option4Text: "Angelina Jolie", rightAnswer: "Gal Gadot"))
+        questions.append(Question(questionTitle: "Where Doest The Main Character of Cast Away Work?", option1Text: "US Postal Service", option2Text: "FedEx", option3Text: "Canada Post", option4Text: "UPS", rightAnswer: "FedEx"))
+        questions.append(Question(questionTitle: "What Agency Doest Ethan Hunt Work For?", option1Text: "MI5", option2Text: "MI6", option3Text: "CIA", option4Text: "IMF", rightAnswer: "IMF"))
+        questions.append(Question(questionTitle: "What is The Name of The Street Harry Lived On?", option1Text: "Muggle Alley", option2Text: "Private Drive", option3Text: "Privet Drive", option4Text: "Diagon Alley", rightAnswer: "Privet Alley"))
+        questions.append(Question(questionTitle: "What is Nemo's Dad Named?", option1Text: "Merlin", option2Text: "Rick", option3Text: "Marvin", option4Text: "Marlin", rightAnswer: "Marlin"))
     }
 }

@@ -18,8 +18,15 @@ class FrontViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        if usernameField.text != ""{
-            performSegue(withIdentifier: "showQuiz", sender: self)
+        if usernameField.text != "" {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "QuizViewController") as! QuizViewController
+            self.present(controller, animated: true)
+        }
+        else {
+            let alert = UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true)
         }
     }
 }

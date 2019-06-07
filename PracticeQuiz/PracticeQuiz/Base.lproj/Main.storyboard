@@ -43,6 +43,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g4p-h7-HHv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BgQ-TJ-VaC"/>
                     <connections>
                         <outlet property="startButton" destination="yMF-gv-Gsz" id="Bhx-jk-m2u"/>
                         <outlet property="usernameField" destination="mRi-KS-bI6" id="hRp-SA-SNz"/>
@@ -127,6 +128,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-342" y="88"/>
+        </scene>
+        <!--Score Board View Controller-->
+        <scene sceneID="XFa-4V-qKq">
+            <objects>
+                <viewController restorationIdentifier="scoreBoardViewController" storyboardIdentifier="scoreBoardViewController" id="WvK-Ok-XEj" customClass="ScoreBoardViewController" customModule="PracticeQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UHy-GX-huU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Gs-wO-ILz">
+                                <rect key="frame" x="16" y="36" width="382" height="668"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="scoreBoardCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreBoardCell" rowHeight="78" id="p6s-Tn-KDC" customClass="ScoreBoardTableViewCell" customModule="PracticeQuiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6s-Tn-KDC" id="0fG-3h-hyu">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="77.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjY-ew-hd6">
+                                                    <rect key="frame" x="28" y="19" width="79" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxx-mi-FYC">
+                                                    <rect key="frame" x="329" y="7.9999999999999964" width="45" height="61.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YjY-ew-hd6" secondAttribute="bottom" constant="8" id="OV7-5j-69y"/>
+                                                <constraint firstItem="wxx-mi-FYC" firstAttribute="top" secondItem="0fG-3h-hyu" secondAttribute="top" constant="8" id="eB3-pa-Ml7"/>
+                                                <constraint firstAttribute="bottom" secondItem="wxx-mi-FYC" secondAttribute="bottom" constant="8" id="kYV-ax-uXp"/>
+                                                <constraint firstItem="YjY-ew-hd6" firstAttribute="leading" secondItem="0fG-3h-hyu" secondAttribute="leadingMargin" constant="8" id="p5T-Ga-lSY"/>
+                                                <constraint firstAttribute="trailing" secondItem="wxx-mi-FYC" secondAttribute="trailing" constant="8" id="qVO-bm-m81"/>
+                                                <constraint firstItem="YjY-ew-hd6" firstAttribute="top" secondItem="0fG-3h-hyu" secondAttribute="topMargin" constant="8" id="rfm-yX-iwe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="scoreLabel" destination="wxx-mi-FYC" id="Rfr-Ol-uED"/>
+                                            <outlet property="usernameLabel" destination="YjY-ew-hd6" id="xip-8b-ACs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ssi-MM-z95" firstAttribute="bottom" secondItem="1Gs-wO-ILz" secondAttribute="bottom" constant="32" id="T9N-WW-mKs"/>
+                            <constraint firstItem="1Gs-wO-ILz" firstAttribute="leading" secondItem="ssi-MM-z95" secondAttribute="leading" constant="16" id="eZw-QU-3HK"/>
+                            <constraint firstItem="1Gs-wO-ILz" firstAttribute="top" secondItem="ssi-MM-z95" secondAttribute="top" constant="16" id="erl-12-fcB"/>
+                            <constraint firstItem="ssi-MM-z95" firstAttribute="trailing" secondItem="1Gs-wO-ILz" secondAttribute="trailing" constant="16" id="oza-tj-dqE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssi-MM-z95"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerTableView" destination="1Gs-wO-ILz" id="Gbf-mx-lgb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKu-oQ-1U3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513.04347826086962" y="86.413043478260875"/>
         </scene>
     </scenes>
 </document>
