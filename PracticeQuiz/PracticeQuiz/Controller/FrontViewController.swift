@@ -12,6 +12,7 @@ class FrontViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var startButton: UIButton!
+    static var username: String = "Undefined"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,16 @@ class FrontViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: Any) {
         if usernameField.text != "" {
+            FrontViewController.username = usernameField.text!
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "QuizViewController") as! QuizViewController
             self.present(controller, animated: true)
+//            for i in 0..<QuizViewController.players.count {
+//                if QuizViewController.players[i].username != usernameField.text {
+//                    FrontViewController.player.username = usernameField.text!
+//                }
+//            }
         }
+            
         else {
             let alert = UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)

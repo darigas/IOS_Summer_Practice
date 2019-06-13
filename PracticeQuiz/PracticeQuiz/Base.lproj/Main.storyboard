@@ -13,7 +13,7 @@
         <!--Front View Controller-->
         <scene sceneID="eW3-6W-7Cw">
             <objects>
-                <viewController storyboardIdentifier="showQuiz" id="7Hx-6q-nJ2" customClass="FrontViewController" customModule="PracticeQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrontViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Hx-6q-nJ2" customClass="FrontViewController" customModule="PracticeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JNv-no-EIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,10 +177,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H3-Cu-OD4">
+                                <rect key="frame" x="0.0" y="704" width="414" height="32"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartButtonPressed:" destination="WvK-Ok-XEj" eventType="touchUpInside" id="1rr-lp-orT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8H3-Cu-OD4" firstAttribute="leading" secondItem="ssi-MM-z95" secondAttribute="leading" id="Djm-7S-dfW"/>
+                            <constraint firstItem="ssi-MM-z95" firstAttribute="trailing" secondItem="8H3-Cu-OD4" secondAttribute="trailing" id="Efe-wU-5Kz"/>
                             <constraint firstItem="ssi-MM-z95" firstAttribute="bottom" secondItem="1Gs-wO-ILz" secondAttribute="bottom" constant="32" id="T9N-WW-mKs"/>
+                            <constraint firstItem="8H3-Cu-OD4" firstAttribute="top" secondItem="1Gs-wO-ILz" secondAttribute="bottom" id="Xd4-iI-1OB"/>
+                            <constraint firstItem="8H3-Cu-OD4" firstAttribute="bottom" secondItem="ssi-MM-z95" secondAttribute="bottom" id="dMI-Ku-8we"/>
                             <constraint firstItem="1Gs-wO-ILz" firstAttribute="leading" secondItem="ssi-MM-z95" secondAttribute="leading" constant="16" id="eZw-QU-3HK"/>
                             <constraint firstItem="1Gs-wO-ILz" firstAttribute="top" secondItem="ssi-MM-z95" secondAttribute="top" constant="16" id="erl-12-fcB"/>
                             <constraint firstItem="ssi-MM-z95" firstAttribute="trailing" secondItem="1Gs-wO-ILz" secondAttribute="trailing" constant="16" id="oza-tj-dqE"/>
@@ -189,6 +200,7 @@
                     </view>
                     <connections>
                         <outlet property="playerTableView" destination="1Gs-wO-ILz" id="Gbf-mx-lgb"/>
+                        <outlet property="restartButton" destination="8H3-Cu-OD4" id="PcQ-jT-SnJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKu-oQ-1U3" userLabel="First Responder" sceneMemberID="firstResponder"/>

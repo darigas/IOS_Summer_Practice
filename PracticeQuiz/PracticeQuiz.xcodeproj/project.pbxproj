@@ -12,7 +12,6 @@
 		709FEE0022AA4325004B6195 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FEDFF22AA4325004B6195 /* ScoreBoardViewController.swift */; };
 		709FEE0222AA457F004B6195 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709FEE0122AA457F004B6195 /* Player.swift */; };
 		70E855F522A64747002B4D96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E855F422A64747002B4D96 /* AppDelegate.swift */; };
-		70E855F722A64747002B4D96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E855F622A64747002B4D96 /* ViewController.swift */; };
 		70E855FA22A64747002B4D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E855F822A64747002B4D96 /* Main.storyboard */; };
 		70E855FC22A64749002B4D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E855FB22A64749002B4D96 /* Assets.xcassets */; };
 		70E855FF22A64749002B4D96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E855FD22A64749002B4D96 /* LaunchScreen.storyboard */; };
@@ -47,7 +46,6 @@
 		709FEE0122AA457F004B6195 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		70E855F122A64747002B4D96 /* PracticeQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E855F422A64747002B4D96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70E855F622A64747002B4D96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		70E855F922A64747002B4D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70E855FB22A64749002B4D96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E855FE22A64749002B4D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				70E8562522A647CE002B4D96 /* View */,
 				70E8562422A647C7002B4D96 /* Model */,
 				70E855F422A64747002B4D96 /* AppDelegate.swift */,
-				70E855F622A64747002B4D96 /* ViewController.swift */,
 				70E855F822A64747002B4D96 /* Main.storyboard */,
 				70E855FB22A64749002B4D96 /* Assets.xcassets */,
 				70E855FD22A64749002B4D96 /* LaunchScreen.storyboard */,
@@ -306,7 +303,6 @@
 				70E8562822A64BFD002B4D96 /* Question.swift in Sources */,
 				70E8562A22A65128002B4D96 /* QuestionList.swift in Sources */,
 				709FEE0022AA4325004B6195 /* ScoreBoardViewController.swift in Sources */,
-				70E855F722A64747002B4D96 /* ViewController.swift in Sources */,
 				70E855F522A64747002B4D96 /* AppDelegate.swift in Sources */,
 				709FEE0222AA457F004B6195 /* Player.swift in Sources */,
 				709FEDFE22AA42F1004B6195 /* ScoreBoardTableViewCell.swift in Sources */,

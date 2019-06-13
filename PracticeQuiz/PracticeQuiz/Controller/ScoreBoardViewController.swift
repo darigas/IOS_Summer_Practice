@@ -10,6 +10,7 @@ import UIKit
 
 class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var playerTableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,12 +20,17 @@ class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Player.get().count
+    }
+    
+    @IBAction func restartButtonPressed(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "FrontViewController") as! FrontViewController
+        self.present(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreBoardCell", for: indexPath) as! ScoreBoardTableViewCell
-        cell.setScoreBoardCell(username: "John", score: "10")
+        cell.setScoreBoardCell(username: Player.get()[indexPath.row].username, score: String(Player.get()[indexPath.row].score))
         return cell
     }
 }

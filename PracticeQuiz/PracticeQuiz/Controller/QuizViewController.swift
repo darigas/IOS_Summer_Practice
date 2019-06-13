@@ -20,6 +20,7 @@ class QuizViewController: UIViewController {
     
     var questionNumber: Int = 0
     var score: Int = 0
+    static var players = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,52 +54,56 @@ class QuizViewController: UIViewController {
         if questions.questions[questionNumber].option1Text == questions.questions[questionNumber].rightAnswer {
             option1.backgroundColor = .green
             updateButtonInteraction()
+            score += 1
         }
         else {
             option1.backgroundColor = .red
             updateButtonInteraction()
         }
         questionNumber += 1
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
     }
     
     @IBAction func option2Pressed(_ sender: Any) {
         if questions.questions[questionNumber].option2Text == questions.questions[questionNumber].rightAnswer {
             option2.backgroundColor = .green
             updateButtonInteraction()
+            score += 1
         }
         else {
             option2.backgroundColor = .red
             updateButtonInteraction()
         }
         questionNumber += 1
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
     }
     
     @IBAction func option3Pressed(_ sender: Any) {
         if questions.questions[questionNumber].option3Text == questions.questions[questionNumber].rightAnswer {
             option3.backgroundColor = .green
             updateButtonInteraction()
+            score += 1
         }
         else {
             option3.backgroundColor = .red
             updateButtonInteraction()
         }
         questionNumber += 1
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
     }
     
     @IBAction func option4Pressed(_ sender: Any) {
         if questions.questions[questionNumber].option4Text == questions.questions[questionNumber].rightAnswer {
             option4.backgroundColor = .green
             updateButtonInteraction()
+            score += 1
         }
         else {
             option4.backgroundColor = .red
             updateButtonInteraction()
         }
         questionNumber += 1
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
     }
     
     @objc func updateQuestion() {
@@ -110,9 +115,16 @@ class QuizViewController: UIViewController {
             questionTitle.text = questions.questions[questionNumber].questionTitle
         }
         else {
+            let player = Player(username: FrontViewController.username, score: score)
+            Player.save(player: player)
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
             self.present(controller, animated: true)
-            
+//            let alert = UIAlertController(title: "End of Quiz", message: "Go to Score Board", preferredStyle: .alert)
+//            let scoreBoardAction = UIAlertAction(title: "Go to Score Board", style: .cancel, handler: {action in
+//                let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
+//            })
+//            alert.addAction(scoreBoardAction)
+//            self.present(alert, animated: true)
         }
         updateAllButtons()
     }
